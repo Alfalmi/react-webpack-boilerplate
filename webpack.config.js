@@ -13,8 +13,16 @@ module.exports = {
         port: 4000
     },
 
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
+
     module: {
-        rules: []
+        rules: [{
+            test: /\.(js|jsx)$/,
+            use: ['babel-loader'],
+            exclude: /node_modules/
+        }]
     },
 
     plugins:[
